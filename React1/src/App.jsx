@@ -1,17 +1,19 @@
-import './App.css'
-import Title from './Title.jsx'
+import "./App.css";
+import ProductTab from "./ProductTab.jsx";
+import Title from "./Title.jsx";
 
 function App() {
-
-  return(
+  return (
     <>
-    <h1>I am React App</h1>
-    <Title />
-    <Title />
-    <Title />
-    </>
+    <div>
+      <Title />
+    </div>
 
-  )
+    <div>
+      <ProductTab />
+    </div>
+    </>
+  );
 }
 
-export default App
+export default App;
