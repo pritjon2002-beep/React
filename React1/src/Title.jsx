@@ -1,6 +1,8 @@
 function Title () {
+     let title = "REACT APP" ; 
     return(
-        <h1>Hello I am Title</h1>
+       
+        <h1>Hello I am {title}</h1>
     )
 }
 
