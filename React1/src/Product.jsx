@@ -4,7 +4,7 @@ function Product({title = "Heading" , description , lists}) {
   return (
     <div className="Product">
       <h1>{title}</h1>
-      <h2>{description.length > 18 ? <h2> <u>{description}</u> </h2> : <h2> {description} </h2> }</h2>
+      {description.length > 18 ? <h2> <u>{description}</u> </h2> : <h2> {description} </h2> }
       <h3>{lists.map((para) => <li>{para}</li>)}</h3>
     </div>
   );
