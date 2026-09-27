@@ -1,4 +1,4 @@
-*{
+body{
   background: #000;
 }.card {
   display: flex;
@@ -15,6 +15,6 @@
   border: 2px solid white;
   color: white;
   border-radius: 1rem;
-  height: 30vh;
+  height: 40vh;
   width: 25vw;
 }
