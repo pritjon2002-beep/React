@@ -1,11 +1,12 @@
-function handleFormSubmit(){
-    console.log("form submitted");    
+function handleFormSubmit(event){
+    console.log("form submitted");   
+    event.preventDefault(); 
 }
 
 export default function From(){
     return(
-        <form action="">
-            <button onClick={handleFormSubmit}>Sumbit</button>
+        <form action="" onSubmit={handleFormSubmit}>
+            <button >Sumbit</button>
         </form>
     )
 }
