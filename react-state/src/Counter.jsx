@@ -4,15 +4,8 @@ export default function Counter() {
   let [count, setCount] = useState(0);
 
   function incCount() {
-    setCount((currCount)=>{
-     return currCount + 1 ;
-    });    
-    setCount((currCount)=>{
-     return currCount + 1 ;
-    });    
-    setCount((currCount)=>{
-     return currCount + 1 ;
-    });    
+    setCount(count + 1);
+    console.log(count);
   }
 
   return (
