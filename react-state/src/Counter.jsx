@@ -1,7 +1,13 @@
 import { useState } from "react";
 
+function init(){
+  console.log("init successfully");
+  return Math.random();
+  
+}
+
 export default function Counter() {
-  let [count, setCount] = useState(0);
+  let [count, setCount] = useState(init());
 
   function incCount() {
     setCount(count + 1);
