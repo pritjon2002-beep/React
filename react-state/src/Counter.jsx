@@ -7,7 +7,7 @@ function init(){
 }
 
 export default function Counter() {
-  let [count, setCount] = useState(init());
+  let [count, setCount] = useState(init);
 
   function incCount() {
     setCount(count + 1);
