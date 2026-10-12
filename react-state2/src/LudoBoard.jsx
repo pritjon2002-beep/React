@@ -3,53 +3,61 @@ import { useState } from "react";
 export default function LudoBoard() {
   const [moves, setMoves] = useState({ blue: 0, green: 0, yellow: 0, red: 0 });
 
-  const[arr, setArr] = useState(["no moves"]);
+  const [arr, setArr] = useState(["no moves"]);
 
-  let updateBule = ()=>{
-    setMoves((prevMoves)=>{
-       return {...prevMoves , blue: prevMoves.blue + 1 }
+  let updateBule = () => {
+    setMoves((prevMoves) => {
+      return { ...prevMoves, blue: prevMoves.blue + 1 };
     });
     console.log(`blue moves = ${moves.blue + 1}`);
 
-     setArr((prevArr)=>{
-    return[...prevArr, "new moves"]; 
-  })
-  console.log(arr);
-  }
+    setArr((prevArr) => {
+      return [...prevArr, "new moves"];
+    });
+    console.log(arr);
+  };
 
-let updateGreen = ()=>{
-    setMoves((prevMoves)=>{
-       return {...prevMoves, green: prevMoves.green + 1}
-    })
-}
+  let updateGreen = () => {
+    setMoves((prevMoves) => {
+      return { ...prevMoves, green: prevMoves.green + 1 };
+    });
+  };
 
-let updateRed = ()=>{
-    setMoves((prevMoves)=>{
-        return {...prevMoves, red: prevMoves.red + 1};
-    })
-}
-let updateYellow = ()=>{
-    setMoves((prevMoves)=>{
-        return {...prevMoves, yellow: prevMoves.yellow + 1};
-    })
-}
+  let updateRed = () => {
+    setMoves((prevMoves) => {
+      return { ...prevMoves, red: prevMoves.red + 1 };
+    });
+  };
+  let updateYellow = () => {
+    setMoves((prevMoves) => {
+      return { ...prevMoves, yellow: prevMoves.yellow + 1 };
+    });
+  };
 
   return (
     <div>
       <p>Game Begins</p>
 
-        <p>{arr}</p>
+      <p>{arr}</p>
       <p>Blue Moves = {moves.blue}</p>
-      <button style={{backgroundColor:"blue"}} onClick={updateBule}>+1</button>
+      <button style={{ backgroundColor: "blue" }} onClick={updateBule}>
+        +1
+      </button>
 
       <p>Green Moves = {moves.green} </p>
-      <button style={{backgroundColor:"green"}} onClick={updateGreen}>+1</button>
+      <button style={{ backgroundColor: "green" }} onClick={updateGreen}>
+        +1
+      </button>
 
       <p>Yellow Moves = {moves.yellow} </p>
-      <button style={{backgroundColor:"yellow"}} onClick={updateYellow}>+1</button>
+      <button style={{ backgroundColor: "yellow" }} onClick={updateYellow}>
+        +1
+      </button>
 
       <p>Red Moves = {moves.red} </p>
-      <button style={{backgroundColor:"red"}} onClick={updateRed}>+1</button>
+      <button style={{ backgroundColor: "red" }} onClick={updateRed}>
+        +1
+      </button>
     </div>
   );
 }

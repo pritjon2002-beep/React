@@ -1,12 +1,12 @@
-import './App.css'
-import LudoBoard from './LudoBoard'
+import "./App.css";
+import LudoBoard from "./LudoBoard";
 
 function App() {
-return(
-  <div>
-    <LudoBoard />
-  </div>
-)
+  return (
+    <div>
+      <LudoBoard />
+    </div>
+  );
 }
 
-export default App
+export default App;
