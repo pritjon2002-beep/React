@@ -19,7 +19,7 @@ export default function TodoList() {
 
   let deleteTask = (id) => {
     setTodos((prevTask) => {
-      return prevTask.filter((todo) => todo.id != id);
+      return prevTask.filter((todo) => todo.id !== id);
     });
   };
 
@@ -48,7 +48,7 @@ export default function TodoList() {
   let upperCaseOne = (id) => {
     setTodos((prevTask) => {
       return prevTask.map((todo) => {
-        if (todo.id == id) {
+        if (todo.id === id) {
           return {
             ...todo,
             task: todo.task.toUpperCase(),
@@ -63,7 +63,7 @@ export default function TodoList() {
   let lowerCaseOne = (id)=>{
     setTodos((prevTask)=>{
         return prevTask.map((todo)=>{
-            if(todo.id == id ){
+            if(todo.id === id ){
                 return{
                     ...todo,
                     task: todo.task.toLowerCase()
