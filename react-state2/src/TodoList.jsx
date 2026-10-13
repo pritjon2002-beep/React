@@ -10,7 +10,7 @@ export default function TodoList() {
   };
 
   let addTask = () => {
-    if(inpTask.trim() === "") return;
+    if (inpTask.trim() === "") return;
     setTodos((prevTask) => {
       return [...prevTask, { task: inpTask, id: uuidv4() }];
     });
@@ -60,20 +60,20 @@ export default function TodoList() {
     });
   };
 
-  let lowerCaseOne = (id)=>{
-    setTodos((prevTask)=>{
-        return prevTask.map((todo)=>{
-            if(todo.id === id ){
-                return{
-                    ...todo,
-                    task: todo.task.toLowerCase()
-                }
-            }else{
-                return todo
-            }
-        })
-    })
-  }
+  let lowerCaseOne = (id) => {
+    setTodos((prevTask) => {
+      return prevTask.map((todo) => {
+        if (todo.id === id) {
+          return {
+            ...todo,
+            task: todo.task.toLowerCase(),
+          };
+        } else {
+          return todo;
+        }
+      });
+    });
+  };
 
   return (
     <div>
@@ -88,14 +88,16 @@ export default function TodoList() {
           return (
             <li key={todo.id}>
               <span> {todo.task}</span> &nbsp; &nbsp;{" "}
-              <button onClick={() => deleteTask(todo.id)}>delete</button> &nbsp; &nbsp;
-              <button onClick={() => upperCaseOne(todo.id)}>UpperCase</button>&nbsp; &nbsp;
-              <button onClick={() => lowerCaseOne(todo.id)}>lowercase</button>&nbsp; &nbsp;
+              <button onClick={() => deleteTask(todo.id)}>delete</button> &nbsp;
+              &nbsp;
+              <button onClick={() => upperCaseOne(todo.id)}>UpperCase</button>
+              &nbsp; &nbsp;
+              <button onClick={() => lowerCaseOne(todo.id)}>lowercase</button>
+              &nbsp; &nbsp;
             </li>
           );
         })}
       </ul>
-
       <button onClick={toUpperCaseAll}>UPPERCASEALL</button>&nbsp;&nbsp;&nbsp;
       <button onClick={toLowerCaseAll}>lowercaseall</button>
     </div>
