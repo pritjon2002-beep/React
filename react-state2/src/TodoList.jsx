@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 
 export default function TodoList(){
     const[todos , setTodos] = useState([{task:"sample task", id:uuidv4()}]);
-     const[inpTask, setInpTask] = useState();
+     const[inpTask, setInpTask] = useState("");
 
      let inputTask = (event)=>{
       setInpTask(event.target.value);
@@ -33,6 +33,17 @@ export default function TodoList(){
         })
      }
 
+     let toLowerCaseAll = ()=>{
+        setTodos((prevTodo)=>{
+            return prevTodo.map((todo)=>{
+                return{
+                    ...todo,
+                    task: todo.task.toLowerCase()
+                }
+            })
+        })
+     }
+
     return(
         <div>
             <input type="text" value={inpTask} onChange={inputTask} />
@@ -50,6 +61,7 @@ export default function TodoList(){
             </ul>
 
             <button onClick={toUpperCaseAll}>UPPERCASEALL</button>
+            <button onClick={toLowerCaseAll}>lowercaseall</button>
         </div>
     )
 }
