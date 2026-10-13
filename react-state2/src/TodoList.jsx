@@ -59,6 +59,21 @@ export default function TodoList() {
     });
   };
 
+  let lowerCaseOne = (id)=>{
+    setTodos((prevTask)=>{
+        return prevTask.map((todo)=>{
+            if(todo.id == id ){
+                return{
+                    ...todo,
+                    task: todo.task.toLowerCase()
+                }
+            }else{
+                return todo
+            }
+        })
+    })
+  }
+
   return (
     <div>
       <input type="text" value={inpTask} onChange={inputTask} />
@@ -73,7 +88,8 @@ export default function TodoList() {
             <li key={todo.id}>
               <span> {todo.task}</span> &nbsp; &nbsp;{" "}
               <button onClick={() => deleteTask(todo.id)}>delete</button> &nbsp; &nbsp;
-              <button onClick={() => upperCaseOne(todo.id)}>UpperCase</button>
+              <button onClick={() => upperCaseOne(todo.id)}>UpperCase</button>&nbsp; &nbsp;
+              <button onClick={() => lowerCaseOne(todo.id)}>lowercase</button>&nbsp; &nbsp;
             </li>
           );
         })}
