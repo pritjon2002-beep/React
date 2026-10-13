@@ -10,6 +10,7 @@ export default function TodoList() {
   };
 
   let addTask = () => {
+    if(inpTask.trim() === "") return;
     setTodos((prevTask) => {
       return [...prevTask, { task: inpTask, id: uuidv4() }];
     });
