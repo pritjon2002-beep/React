@@ -75,6 +75,10 @@ export default function TodoList() {
     });
   };
 
+  let markAsDone = ()=>{
+    console.log("todos completed");
+    
+  }
 
   return (
     <div>
@@ -93,7 +97,9 @@ export default function TodoList() {
               <button onClick={() => upperCaseOne(todo.id)}>UpperCase</button>
               &nbsp; &nbsp;
               <button onClick={() => lowerCaseOne(todo.id)}>lowercase</button>
-            
+              &nbsp; &nbsp;
+              <button>Mark-As-Done</button>
+              &nbsp; &nbsp;
               <button onClick={() => deleteTask(todo.id)}>delete</button> &nbsp;
             </li>
           );
