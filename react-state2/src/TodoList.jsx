@@ -98,7 +98,7 @@ export default function TodoList() {
               &nbsp; &nbsp;
               <button onClick={() => lowerCaseOne(todo.id)}>lowercase</button>
               &nbsp; &nbsp;
-              <button>Mark-As-Done</button>
+              <button onClick={markAsDone}>Mark-As-Done</button>
               &nbsp; &nbsp;
               <button onClick={() => deleteTask(todo.id)}>delete</button> &nbsp;
             </li>
