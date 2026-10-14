@@ -138,7 +138,7 @@ export default function TodoList() {
       <br />
       <hr />
       <br />
-      <button onClick={markAsDoneAll}>Mark-As-Done</button>
+      <button onClick={markAsDoneAll}>Mark-As-Done-ALL</button>
       &nbsp; &nbsp; &nbsp;
       <button onClick={toUpperCaseAll}>UPPERCASEALL</button>&nbsp;&nbsp;&nbsp;
       <button onClick={toLowerCaseAll}>lowercaseall</button>
