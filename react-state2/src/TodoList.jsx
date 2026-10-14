@@ -2,7 +2,9 @@ import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 export default function TodoList() {
-  const [todos, setTodos] = useState([{ task: "sample task", id: uuidv4() }]);
+  const [todos, setTodos] = useState([
+    { task: "sample task", id: uuidv4(), isDone: false },
+  ]);
   const [inpTask, setInpTask] = useState("");
 
   let inputTask = (event) => {
@@ -12,7 +14,7 @@ export default function TodoList() {
   let addTask = () => {
     if (inpTask.trim() === "") return;
     setTodos((prevTask) => {
-      return [...prevTask, { task: inpTask, id: uuidv4() }];
+      return [...prevTask, { task: inpTask, id: uuidv4(), isDone: false }];
     });
     setInpTask("");
   };
@@ -75,6 +77,32 @@ export default function TodoList() {
     });
   };
 
+  let markAsDone = (id) => {
+    setTodos((prevTodo) => {
+      return prevTodo.map((todo) => {
+        if (todo.id === id) {
+          return {
+            ...todo,
+            isDone: !todo.isDone,
+          };
+        } else {
+          return todo;
+        }
+      });
+    });
+  };
+
+  let markAsDoneAll = () => {
+    setTodos((prevTodo) => {
+      return prevTodo.map((todo) => {
+        return {
+          ...todo,
+          isDone: !todo.isDone,
+        };
+      });
+    });
+  };
+
   return (
     <div>
       <input type="text" value={inpTask} onChange={inputTask} />
@@ -87,9 +115,18 @@ export default function TodoList() {
         {todos.map((todo) => {
           return (
             <li key={todo.id}>
-              <span> {todo.task}</span> &nbsp; &nbsp;{" "}
+              <span
+                style={
+                  todo.isDone ? { textDecorationLine: "line-through" } : {}
+                }
+              >
+                {" "}
+                {todo.task}
+              </span>
+              &nbsp; &nbsp;
+              <button onClick={() => markAsDone(todo.id)}>Mark-As-Done</button>
+              &nbsp; &nbsp;
               <button onClick={() => deleteTask(todo.id)}>delete</button> &nbsp;
-              &nbsp;
               <button onClick={() => upperCaseOne(todo.id)}>UpperCase</button>
               &nbsp; &nbsp;
               <button onClick={() => lowerCaseOne(todo.id)}>lowercase</button>
@@ -98,6 +135,11 @@ export default function TodoList() {
           );
         })}
       </ul>
+      <br />
+      <hr />
+      <br />
+      <button onClick={markAsDoneAll}>Mark-As-Done-ALL</button>
+      &nbsp; &nbsp; &nbsp;
       <button onClick={toUpperCaseAll}>UPPERCASEALL</button>&nbsp;&nbsp;&nbsp;
       <button onClick={toLowerCaseAll}>lowercaseall</button>
     </div>
