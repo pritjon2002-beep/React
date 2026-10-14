@@ -75,6 +75,7 @@ export default function TodoList() {
     });
   };
 
+
   return (
     <div>
       <input type="text" value={inpTask} onChange={inputTask} />
@@ -87,13 +88,13 @@ export default function TodoList() {
         {todos.map((todo) => {
           return (
             <li key={todo.id}>
-              <span> {todo.task}</span> &nbsp; &nbsp;{" "}
-              <button onClick={() => deleteTask(todo.id)}>delete</button> &nbsp;
-              &nbsp;
+              <span style={{fontSize:"1.5rem"}}> {todo.task}</span>
+               &nbsp; &nbsp;
               <button onClick={() => upperCaseOne(todo.id)}>UpperCase</button>
               &nbsp; &nbsp;
               <button onClick={() => lowerCaseOne(todo.id)}>lowercase</button>
-              &nbsp; &nbsp;
+            
+              <button onClick={() => deleteTask(todo.id)}>delete</button> &nbsp;
             </li>
           );
         })}
