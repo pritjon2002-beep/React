@@ -3,7 +3,7 @@ import { genTicket  , sum} from "./helper";
 import Ticket from "./Ticket";
 
 export default function Lottery({n,winningSum}){
-    const [ticket , setTicket] = useState(genTicket(n));
+    const [ticket , setTicket] = useState(()=> genTicket(n))
     let isWinning = sum(ticket) === winningSum;
     let buyTicket = ()=>{
         setTicket(genTicket(n));
@@ -11,7 +11,7 @@ export default function Lottery({n,winningSum}){
     return(
         <div>
            <h1>Lottery Game</h1>
-            <Ticket />
+            <Ticket ticket={ticket}/>
            <h3>{isWinning && "Congratulations, you won the lottery!"} </h3>
            <h3 onClick={buyTicket}>Generate a Ticket</h3>
         </div>
