@@ -2,7 +2,7 @@ import "./App.css";
 import Lottery from "./Lottery";
 import LudoBoard from "./LudoBoard";
 import TodoList from "./TodoList";
-import TicketNum from "./TicketNum";
+import Ticket from "./Ticket";
 
 function App() {
   return (
@@ -10,9 +10,8 @@ function App() {
       {/* <LudoBoard /> */}
       {/* <TodoList /> */}
       {/* <Lottery /> */}
-      <TicketNum num={5} />
-      <TicketNum num={5} />
-      <TicketNum num={5} />
+      <Ticket ticket = {[0,2,3]} />
+      
     </div>
   );
 }
